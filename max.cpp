@@ -17,23 +17,27 @@ int main()
                                     if(num[k]>0){
                                                  temp=num[k];
                                                  flag=1;
+                                                
                                                  }
                                     }
                         else {
                              if(flag_b==0){
                                            if(num[k]>0){
                                                         temp_b=num[k];
-                                                        flag_b=1;
+                                                        flag_b=k;
                                                         }
                                            }
-                             count+=num[k];
-                             if(count>=0)
-                             temp+=count;
-                             else {
+                             temp+=num[k];
+                             if(temp<0)
+                             {
+                                  if(flag_b!=0){
                                   temp=temp_b;
+                                  k=flag_b+1;
                                   flag_b=0;
                                   }
                              }
+                             }
+                             
                         if(temp>max)
                         max=temp;
                         }
